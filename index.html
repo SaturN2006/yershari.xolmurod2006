@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    body{
+  margin: 0;
+  padding: 0;
+  background: white;
+  background-color: #a2d2ff;
+}
+
+.mapa{
+  position:relative;
+  display: inline-block;
+  margin: 60px;
+  height: 400px;
+  width: 400px;
+  margin-left: 750px;
+  margin-top: 100px;
+  background: url('https://img-new.cgtrader.com/items/134236/b2f0135aa5/large/3d-world-map-and-usa-map-3d-model-max-obj-fbx.jpg');
+  background-position: top left;
+  background-size: cover;
+  border-radius: 50%;  
+  animation: 6s mapa infinite linear;
+  box-shadow: 0px 2px 40px; 
+}
+
+@keyframes mapa{
+  0%{
+    background-position: 0px 0px;  
+}
+  100%{
+    background-position: -1348px 0px;
+  }
+}
+
+@keyframes mapa2{
+  0%{
+    background-position: -1348px 0px;  
+}
+  100%{
+    background-position: 0px 0px;
+  }
+}
+@keyframes mapa4{
+  0%{
+    background-color: #a2d2ff;;
+}
+  100%{
+    background-color: #a2d2ff;;
+  }
+}
+
+@keyframes mapa3 {
+  0%{
+    background-color: #00b4d8;
+  }
+  10%{
+    background-color: #8d99ae;
+  }
+  20%{
+    background-color: #81b29a;
+  }
+  30%{
+    background-color: #560bad;
+  }
+  40%{
+    background-color: #6c757d;
+  }
+  50%{
+    background-color: #00296b;
+  }
+  60%{
+    background-color: #ffd500;
+  }
+  70%{
+    background-color: #fb6107;
+  }
+  80%{
+    background-color: #d100d1;
+  }
+  90%{
+    background-color: #ffdab9;
+  }
+  100%{
+    background-color: #051923;
+  }
+}
+
+.sombra{
+  box-shadow: -20px 0px 40px black inset;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.button-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  padding: 20px 50px;
+  background: transparent;
+  box-shadow: 0px 10px 50px green;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  margin: 10px;
+  margin-right: 50px;
+
+}
+.btn-2 {
+  display: none;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+  <div class="mapa">
+  <div class="sombra"></div>
+</div>
+<div class="button-container">
+<button>tansue</button> 
+<button class="btn-5">Stop</button>
+</div>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  $('button').click (function() {
+   $('body').css('animation', ".6s mapa3 infinite linear")
+   $('.mapa').css('animation', "6s mapa2 infinite linear")
+   $('.btn-5').css('display', "block")
+  });
+  $('.btn-5').click (function() {
+   $('body').css('animation', ".6s mapa4 infinite linear")
+   $('.mapa').css('animation', "6s mapa infinite linear")
+  });
+
+var sr = ScrollReveal({
+    origin: 'bottom',
+    distance: '30px',
+    duration: 2000,
+    delay: 2000,
+})
+sr.reveal("button"); 
+sr.reveal(".mapa", {origin: 'top', distance: '100px'})
+</script>
+</body>
+</html>
